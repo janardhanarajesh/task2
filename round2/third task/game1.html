@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>rock paper sissors</title>
+<link rel="icon" href="images/rps.png">
+</head>
+<style>
+	*{
+		margin:0px;
+		padding:0px;
+		box-sizing:border-box;
+	}
+	a{
+		text-decoration: none;
+		color:white;
+	}
+	img{
+		border-radius: 20px;
+			}
+			h2{
+		text-transform: capitalize;
+
+			}
+			center{
+				font-size: 20px;
+			}
+	</style>
+<body bgcolor="floralwhite" >
+<center><h1 style="text-align: center;">ROCK PAPER SISSORS</h1></center>
+		<div style="height:600px;width:1265px;">
+			<div style="height:100px;width:100px;float: left;"><p id="pout"></p></div>
+	<center>
+	<div style="height:350px;width:900px;box-shadow: 5px 5px 7px black;border-radius: 50px;">
+		<div style="height:60px;width:900px">
+		<div style="height:45px;width:300px;float:left;color: black;"><h2>computer selected</h2></div>
+		<div style="height:45px;width:300px;float:left;color: black;"><h2></h2></div>
+
+		<div style="height:45px;width:300px;float:right;color:black;"><h2>you selected</h2></div>
+</div>
+	<div id="d1" style="height:300px;width:300px;float:left;"></div>
+
+	<div id="disp" style="height:300px;width:300px;float:left">
+	</div>
+	<div id="out" style="height:300px;width:300px;float:left;"></div>
+
+</div>
+	<div id="ki" style="height:250px;width:800px;">
+		<div style="height:250px;width:250px;background-image:url('images/rock.png');background-size: 250px 250px;float:left;border: 3px solid black;border-radius:20px;cursor: pointer;" onclick="rocks()">
+			
+		</div>
+		<div style="height:250px;width:250px;background-image:url('images/paper.png');background-size: 250px 250px;float:left;border: 3px solid black;border-radius:20px;cursor: pointer;margin-left:26px" onclick="papers()">
+			
+		</div>
+		<div style="height:250px;width:250px;background-image:url('images/sissor.png');background-size: 250px 250px;float:right;border: 3px solid black;border-radius:20px;cursor: pointer;" onclick="sissors()">
+			
+		</div>
+	</div>
+</center>
+<button onclick="gamestart()" style="height:40px;width:60px;font-size:12px;cursor:pointer;float: right;position:absolute;top:250px;left:1180px;border-radius: 8px;">START</button>
+
+</div>
+<script type="text/javascript">
+	var i=0;
+		document.getElementById('pout').innerHTML="your score:"+i;
+	
+	function rocks()
+	{
+		var roc="<img src='images/rock.png' style='height:250px;width:250px'>";
+var arb=document.getElementById('out').innerHTML="<img src='images/rock.png' style='height:250px;width:250px'>";
+
+gamestart=()=>
+	{
+	let arr=["<img src='images/rock.png' style='height:250px;width:250px'>","<img src='images/paper.png' style='height:250px;width:250px'>","<img src='images/sissor.png' style='height:250px;width:250px'>"]
+
+	let ran=arr[Math.floor(Math.random()*arr.length)];
+let a=document.getElementById('d1').innerHTML=ran;
+	if(ran==roc)
+{
+	document.getElementById('disp').innerHTML="<br/><br/><br/><br/><br/><br><center><h1 style='color:goldenrod'>TIE</h1></center>"
+}
+else if(ran=="<img src='images/paper.png' style='height:250px;width:250px'>")
+
+{
+	document.getElementById('disp').innerHTML="<br/><br/><br/><br/><br/><br><center><h1 style='color:red;'>YOU LOST</h1></center>";
+
+}
+else if(ran=="<img src='images/sissor.png' style='height:250px;width:250px'>")
+{
+
+	document.getElementById('disp').innerHTML="<br/><br/><br/><br/><br/><br><center><h1 style='color:green'>YOU WON</h1></center>";
+	i++;
+		document.getElementById('pout').innerHTML="your score:"+i;
+
+}
+
+	}
+
+
+}
+		
+function papers()
+	{
+
+		var roc="<img src='images/paper.png' style='height:250px;width:250px'>";
+var arb=document.getElementById('out').innerHTML="<img src='images/paper.png' style='height:250px;width:250px'>";
+gamestart=()=>
+	{
+	var arr=["<img src='images/rock.png' style='height:250px;width:250px'>","<img src='images/paper.png' style='height:250px;width:250px'>","<img src='images/sissor.png' style='height:250px;width:250px'>"]
+
+	var ran=arr[Math.floor(Math.random()*arr.length)];
+var a=document.getElementById('d1').innerHTML=ran;
+	if(ran==roc)
+{
+	document.getElementById('disp').innerHTML="<br/><br/><br/><br/><br/><br><center><h1 style='color:goldenrod'>TIE</h1></center>"
+}
+else if(ran=="<img src='images/rock.png' style='height:250px;width:250px'>")
+{
+	document.getElementById('disp').innerHTML="<br/><br/><br/><br/><br/><br><center><h1 style='color:green'>YOU WON</h1></center>"
+i++;
+		document.getElementById('pout').innerHTML="your score:"+i;
+
+
+}
+else if(ran=="<img src='images/sissor.png' style='height:250px;width:250px'>")
+{
+	document.getElementById('disp').innerHTML="<br/><br/><br/><br/><br/><br><center><h1 style='color:red'>YOU LOST</h1></center>"
+
+}
+
+	}
+
+
+}
+function sissors()
+	{
+		var roc="<img src='images/sissor.png' style='height:250px;width:250px'>";
+var arb=document.getElementById('out').innerHTML="<img src='images/sissor.png' style='height:250px;width:250px'>";
+gamestart=()=>
+	{
+	var arr=["<img src='images/rock.png' style='height:250px;width:250px'>","<img src='images/paper.png' style='height:250px;width:250px'>","<img src='images/sissor.png' style='height:250px;width:250px'>"]
+
+	var ran=arr[Math.floor(Math.random()*arr.length)];
+var a=document.getElementById('d1').innerHTML=ran;
+	if(ran==roc)
+{
+	document.getElementById('disp').innerHTML="<br/><br/><br/><br/><br/><br><center><h1 style='color:goldenrod'>TIE</h1></center>"
+}
+else if(ran=="<img src='images/rock.png' style='height:250px;width:250px'>")
+{
+	document.getElementById('disp').innerHTML="<br/><br/><br/><br/><br/><br><center><h1 style='color:red'>YOU LOST</h1></center>"
+
+}
+
+else if(ran=="<img src='images/paper.png' style='height:250px;width:250px'>")
+{
+	document.getElementById('disp').innerHTML="<br/><br/><br/><br/><br/><br><center><h1 style='color:green'>YOU WON</h1></center>"
+i++;
+	document.getElementById('pout').innerHTML="your score:"+i;
+
+}
+	}
+
+
+}
+</script>
+</body>
+</html>
